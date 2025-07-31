@@ -180,38 +180,52 @@ namespace Assignment02ADV
         }
         #endregion
 
-      #region Q10
-//        List<int> list = new List<int> { 1, 2, 3, 7, 5 };
-//        int target = 12;
+        #region Q10
+        //        List<int> list = new List<int> { 1, 2, 3, 7, 5 };
+        //        int target = 12;
 
-//        for (int start = 0; start<list.Count; start++)
-//        {
-//            int sum = 0;
-//        List<int> sub = new List<int>();
-//            for (int end = start; end<list.Count; end++)
-//            {
-//                sum += list[end];
-//                sub.Add(list[end]);
+        //        for (int start = 0; start<list.Count; start++)
+        //        {
+        //            int sum = 0;
+        //        List<int> sub = new List<int>();
+        //            for (int end = start; end<list.Count; end++)
+        //            {
+        //                sum += list[end];
+        //                sub.Add(list[end]);
 
-//                if (sum == target)
-//                {
-//                    Console.WriteLine("[" + string.Join(", ", sub) + "]");
-//                    return;
-//                }
-//}
-//        }
+        //                if (sum == target)
+        //                {
+        //                    Console.WriteLine("[" + string.Join(", ", sub) + "]");
+        //                    return;
+        //                }
+        //}
+        //        }
 
-//        Console.WriteLine("No subarray found");
-    
+        //        Console.WriteLine("No subarray found");
+
         #endregion
 
         #region Q11
+        Queue<int> queue = new Queue<int>(new[] { 1, 2, 3, 4, 5 });
+        int k = 3;
 
+        Stack<int> stack = new Stack<int>();
+        for (int i = 0; i<k; i++)
+            stack.Push(queue.Dequeue());
+
+        Queue<int> result = new Queue<int>();
+        while (stack.Count > 0)
+            result.Enqueue(stack.Pop());
+
+        while (queue.Count > 0)
+            result.Enqueue(queue.Dequeue());
+
+        Console.WriteLine("[" + string.Join(", ", result) + "]");
         #endregion
 
 
 
-
+}
 
    
     }
