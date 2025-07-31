@@ -1,4 +1,6 @@
-﻿namespace Assignment02ADV
+﻿using System.Collections;
+
+namespace Assignment02ADV
 {
     internal class Program
     {
@@ -95,39 +97,126 @@
 
 
             #region Q5
-            //
+            //int[] array = { 1, 3, 5, 3, 7, 1, 9, 5 };
+            //int[] noDuplicates = RemoveDuplicates(array);
+
+            //Console.WriteLine("Array after removing duplicates:");
+            //foreach (int num in noDuplicates)
+            //{
+            //    Console.Write(num + " ");
+            //}
             #endregion
 
             #region Q6
+            //ArrayList list = new ArrayList() { 1, 2, 3, 4, 5, 6 };
+            //for (int i = list.Count - 1; i >= 0; i--)
+            //{
+            //    if ((int)list[i] % 2 != 0)
+            //        list.RemoveAt(i);
+            //}
 
+            //foreach (var item in list)
+            //    Console.Write(item + " ");
             #endregion
 
             #region Q7
+            //Queue queue = new Queue();
+            //queue.Enqueue(1);
+            //queue.Enqueue("Apple");
+            //queue.Enqueue(5.28);
 
+            //foreach (var item in queue)
+            //    Console.WriteLine(item);
             #endregion
 
             #region Q8
+            //    Stack<int> myStack = new Stack<int>();
 
+            //    // Push sample integers onto the stack
+            //    myStack.Push(10);
+            //    myStack.Push(20);
+            //    myStack.Push(30);
+            //    myStack.Push(40);
+            //    myStack.Push(50);
+
+            //    Console.Write("Enter the target number to search: ");
+            //    int target;
+
+            //    // Validate user input
+            //    if (int.TryParse(Console.ReadLine(), out target))
+            //    {
+            //        Helper.SearchInStack(myStack, target);
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Invalid input. Please enter an integer.");
+            //    }
+            //}
             #endregion
 
             #region Q9
+            int[] arr1 = { 1, 2, 3, 4, 4 };
+            int[] arr2 = { 10, 4, 4 };
 
-            #endregion
+            Dictionary<int, int> freq = new Dictionary<int, int>();
+            foreach (int num in arr1)
+            {
+                if (!freq.ContainsKey(num))
+                    freq[num] = 0;
+                freq[num]++;
+            }
 
-            #region Q10
+            List<int> result = new List<int>();
+            foreach (int num in arr2)
+            {
+                if (freq.ContainsKey(num) && freq[num] > 0)
+                {
+                    result.Add(num);
+                    freq[num]--;
+                }
+            }
 
-            #endregion
-
-            #region Q11
-
-            #endregion
-
-
-
-
-
+            Console.WriteLine("[" + string.Join(",", result) + "]");
         }
+        #endregion
+
+      #region Q10
+//        List<int> list = new List<int> { 1, 2, 3, 7, 5 };
+//        int target = 12;
+
+//        for (int start = 0; start<list.Count; start++)
+//        {
+//            int sum = 0;
+//        List<int> sub = new List<int>();
+//            for (int end = start; end<list.Count; end++)
+//            {
+//                sum += list[end];
+//                sub.Add(list[end]);
+
+//                if (sum == target)
+//                {
+//                    Console.WriteLine("[" + string.Join(", ", sub) + "]");
+//                    return;
+//                }
+//}
+//        }
+
+//        Console.WriteLine("No subarray found");
+    
+        #endregion
+
+        #region Q11
+
+        #endregion
+
+
+
+
+
+   
     }
 
-}
+
+    }
+
 
